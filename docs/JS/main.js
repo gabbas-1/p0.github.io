@@ -271,3 +271,9 @@ Message: ${message}`;
   window.open(whatsappUrl, "_blank");
   return false;
 }
+
+window.onbeforeunload = null;
+window.addEventListener("beforeunload", function(e) {
+  e.preventDefault();
+  delete e.returnValue; // Removes any "unsaved changes" warning
+});
