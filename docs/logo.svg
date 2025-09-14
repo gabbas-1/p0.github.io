@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 536 300" class="logo-img-mobile">
+    <defs>
+        <style>
+                                    .a {
+                                        fill: #CC2127;
+                                    }
+        </style>
+    </defs>
+    <ellipse class="a" cx="410" cy="148.01" rx="126.99" ry="148.01" />
+    <path class="a" d="M251.21,117.7c0,66.64-50.82,108.57-130.7,108.57H79.12V9.14h41.39C200.39,9.14,251.21,51.08,251.21,117.7Z" transform="translate(-2.64 -5.06)" />
+    <rect class="a" y="4.08" width="96.7" height="287.87" />
+</svg>
