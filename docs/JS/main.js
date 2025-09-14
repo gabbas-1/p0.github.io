@@ -1,3 +1,12 @@
+// Block all beforeunload handlers so no warning shows up
+window.addEventListener(
+  "beforeunload",
+  function (e) {
+    e.stopImmediatePropagation(); // stops other scripts from adding handlers
+  },
+  true
+); // run in capture phase so it runs first
+
 // nav bar click Scroll to section logic starts here //
 const logoBtn = document.getElementById("nav-logo");
 // const homeBtn = document.getElementById("homeBtn");
@@ -273,7 +282,7 @@ Message: ${message}`;
 }
 
 window.onbeforeunload = null;
-window.addEventListener("beforeunload", function(e) {
+window.addEventListener("beforeunload", function (e) {
   e.preventDefault();
   delete e.returnValue; // Removes any "unsaved changes" warning
 });
