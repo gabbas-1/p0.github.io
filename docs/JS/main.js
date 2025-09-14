@@ -4,7 +4,6 @@ const logoBtn = document.getElementById("nav-logo");
 const theoryBtn = document.getElementById("theoryBtn");
 const numbersBtn = document.getElementById("numbersBtn");
 const artifactsBtn = document.getElementById("artifactsBtn");
-const colorsFeelingsBtn = document.getElementById("colorsFeelingsBtn");
 const P0Btn = document.getElementById("P0Btn");
 // const learnMore = document.getElementById("learnMore");
 logoBtn.addEventListener("click", function (event) {
@@ -45,26 +44,6 @@ artifactsBtn.addEventListener("click", function (event) {
     document.getElementById("snapClass").scrollTop = topPos - 40;
   }
 });
-colorsFeelingsBtn.addEventListener("click", function (event) {
-  event.preventDefault();
-  var myElement = document.getElementById("colorsFeelings");
-  var topPos = myElement.offsetTop;
-  if (window.innerWidth > 821) {
-    document.getElementById("snapClass").scrollTop = topPos;
-  } else {
-    document.getElementById("snapClass").scrollTop = topPos - 40;
-  }
-});
-// learnMore.addEventListener("click", function (event) {
-//   event.preventDefault();
-//   var myElement = document.getElementById("concept");
-//   var topPos = myElement.offsetTop;
-//   if (screen.availWidth - window.innerWidth === 0) {
-//     document.getElementById("snapClass").scrollTop = topPos;
-//   } else {
-//     document.getElementById("snapClass").scrollTop = topPos - 40;
-//   }
-// });
 
 navigator.sayswho = (function () {
   var ua = navigator.userAgent,
@@ -98,16 +77,16 @@ function mobileMenuScreenResize() {
   }
 }
 const logohomeBtn = document.getElementById("mobile-nav-logo");
-// const mobilehomeBtn = document.getElementById("mobile-homeBtn");
 const mobiletheoryBtn = document.getElementById("mobile-theoryBtn");
 const mobilenumbersBtn = document.getElementById("mobile-numbersBtn");
 const mobileArtifactsBtn = document.getElementById("mobile-artifactsBtn");
 const mobileP0Btn = document.getElementById("mobile-p0Btn");
 
-// const mobileLearnMoreBtn = document.getElementById("mobile-learnMore");
 logohomeBtn.addEventListener("click", () => {
   var myElement = document.getElementById("idea");
   var topPos = myElement.offsetTop;
+  barsWrapper.classList.toggle("open");
+  navbar.classList.toggle("open");
   document.getElementById("snapClass").scrollTop = topPos - 40;
 });
 mobileP0Btn.addEventListener("click", () => {
@@ -138,122 +117,6 @@ mobileArtifactsBtn.addEventListener("click", () => {
   var topPos = myElement.offsetTop;
   document.getElementById("snapClass").scrollTop = topPos - 40;
 });
-// mobileLearnMoreBtn.addEventListener("click", () => {
-//   var myElement = document.getElementById("concept");
-//   var topPos = myElement.offsetTop;
-//   document.getElementById("snapClass").scrollTop = topPos - 40;
-// });
-const colorsValuePairs = [
-  { name: "Yellow", value: "#fbe106" },
-  { name: "Pink", value: "#ff69b4" },
-  { name: "Brown", value: "#6c3312" },
-  { name: "Black", value: "#000000" },
-  { name: "Blue", value: "#22aef4" },
-  { name: "Purple", value: "#7c00e8" },
-  { name: "Orange", value: "#f28a30" },
-  { name: "White", value: "#ffffff" },
-  { name: "Red", value: "#b70909" },
-  { name: "Green", value: "#319b31" },
-];
-
-function openCity(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-  const menuTab = document.getElementById("menuTab");
-  menuTab.innerHTML = `<span class="drop-button-text"> ${cityName} </span>  <i class="fa-solid fa-chevron-down drop-button-icon" id="drop-button-icon"></i>`;
-  const colorOneD = colorsValuePairs.find((e) => e.name === cityName).value;
-  document.getElementById("menuTab").style.backgroundColor = colorOneD;
-  if (colorOneD === "#fbe106" || colorOneD === "#ffffff") {
-    document.getElementById("menuTab").style.color = "#000000";
-    document.getElementsByClassName("arrow")[0].classList.add("light-color");
-  } else {
-    document.getElementById("menuTab").style.color = "#ffffff";
-    document.getElementsByClassName("arrow")[0].classList.remove("light-color");
-  }
-}
-const animation_elements = document.querySelectorAll(".loop-screen > svg");
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const svgLayers = document.querySelectorAll(".svg-layer");
-        for (let i = 0; i < svgLayers.length; i++) {
-          svgLayers[i].classList.add("animate");
-        }
-      } else {
-        const svgLayers = document.querySelectorAll(".svg-layer");
-        for (let i = 0; i < svgLayers.length; i++) {
-          svgLayers[i].classList.remove("animate");
-        }
-      }
-    });
-  },
-  {
-    threshold: 0.5,
-  }
-);
-for (let i = 0; i < animation_elements.length; i++) {
-  const el = animation_elements[i];
-  observer.observe(el);
-}
-const animation_mobile_elements = document.querySelectorAll(
-  ".loop-screen-mobile > svg"
-);
-const observerMobile = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const svgLayers = document.querySelectorAll(".svg-layer-mobile");
-        for (let i = 0; i < svgLayers.length; i++) {
-          svgLayers[i].classList.add("animate-mobile");
-        }
-      } else {
-        const svgLayers = document.querySelectorAll(".svg-layer-mobile");
-        for (let i = 0; i < svgLayers.length; i++) {
-          svgLayers[i].classList.remove("animate-mobile");
-        }
-      }
-    });
-  },
-  {
-    threshold: 0.5,
-  }
-);
-for (let i = 0; i < animation_mobile_elements.length; i++) {
-  const el = animation_mobile_elements[i];
-  observerMobile.observe(el);
-}
-function dropDown() {
-  document.getElementById("myDropdown").classList.toggle("show");
-  const tabContent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabContent.length; i++) {
-    tabContent[i].classList.toggle("tabContentHide");
-  }
-  if (document.getElementById("myDropdown").classList.contains("show")) {
-    document
-      .getElementById("menuTab")
-      .children[1].classList.remove("fa-chevron-down");
-    document
-      .getElementById("menuTab")
-      .children[1].classList.add("fa-chevron-up");
-  } else {
-    document
-      .getElementById("menuTab")
-      .children[1].classList.add("fa-chevron-down");
-    document
-      .getElementById("menuTab")
-      .children[1].classList.remove("fa-chevron-up");
-  }
-}
 
 window.onclick = function (event) {
   if (!event.target.matches(".dropbtn")) {
