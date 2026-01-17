@@ -91,6 +91,7 @@ a {
     background: var(--bg-secondary);
     color: var(--text-secondary);
 }
+
 .nav-link-logo {
     display: flex;
     align-items: center;
@@ -617,6 +618,7 @@ ul.why-list li.why-list-item {
     .nav-link {
         justify-content: center;
     }
+
     .nav-link-logo {
         justify-content: center;
     }
@@ -806,9 +808,9 @@ ul.why-list li.why-list-item {
         max-width: 90%;
     }
 
-    #mobileSection-1 .left-mobile {
+    /* #mobileSection-1 .left-mobile {
         text-align: start;
-    }
+    } */
 
     .section-body-wrapper-mobile ul .why-list-item {
         margin-bottom: 50px;
@@ -1425,11 +1427,11 @@ ul.why-list li.why-list-item {
 }
 
 .products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  width: 100%;
-  padding: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    width: 100%;
+    padding: 20px 0;
 }
 
 .why-grid {
@@ -1441,26 +1443,29 @@ ul.why-list li.why-list-item {
 }
 
 .product-image {
-  background-color: #252529;
-  border-radius: 10px;
-  padding: 10px; /* Controls inner spacing around the image */
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  min-height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+    background-color: #252529;
+    border-radius: 10px;
+    padding: 10px;
+    /* Controls inner spacing around the image */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .product-1-img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: contain; /* Keeps the image inside without distortion */
-  display: block;
-  max-height: 100%; /* Ensures it respects parent height if limited */
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: contain;
+    /* Keeps the image inside without distortion */
+    display: block;
+    max-height: 100%;
+    /* Ensures it respects parent height if limited */
 }
 
 .product-text,
